@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Bower Youtube Player Demo</title>
+	
+	<script data-main="main" src="../components/requirejs/require.js"></script>
+	<script>
+		requirejs.config({
+			baseUrl: "",
+			paths:{
+				'domReady' : '../components/requirejs-domready/domReady',
+				'async' : '../components/requirejs-plugins/src/async',
+				'EventEmitter': '../components/EventEmitter/dist/EventEmitter',
+				'YouTubePlayer' : '../dist/YouTubePlayer'
+			}
+		});
+	</script>
+</head>
+<body>
+	<h1>Youtube</h1>
+	
+	<div>
+		<p>Width defined in JS height auto calculated for aspect ratio</p>
+		<div id="player1"></div>
+	</div>
+
+	<div>
+		<p>Width and height set in CSS</p>
+		<div id="player2" style="width:300px; height:500px;"></div>
+	</div>
+
+	<div>
+		<p>Init delayed for 2 seconds for testing. Width and height defined in JS</p>
+		<div id="player3"></div>
+	</div>
+</body>
+</html>

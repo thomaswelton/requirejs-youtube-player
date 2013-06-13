@@ -1,0 +1,16 @@
+{
+    "name": "YouTubePlayer"
+  , "version": "0.0.0"
+  , "main": "dist/YouTubePlayer.js"
+  , "dependencies": {
+      "requirejs": "0.4.*"
+    , "requirejs-domready": "0.4.*"
+    , "requirejs-plugins": "1.0.*"
+    , "EventEmitter" : "git://github.com/thomaswelton/bower-event-emitter.git"
+  }
+  , "ignore": [
+      "**/.*"
+    , "node_modules"
+    , "components"
+  ]
+}
