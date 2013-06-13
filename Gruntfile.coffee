@@ -3,7 +3,9 @@ module.exports = (grunt) =>
 		pkg: grunt.file.readJSON 'package.json'
 
 		bower:
-			install: {}
+			install:
+				options:
+					targetDir: 'demo/components'
 
 		## Compile coffeescript
 		coffee:
@@ -12,14 +14,7 @@ module.exports = (grunt) =>
 					{
 						expand: true
 						cwd: 'src'
-						src: ['YouTubePlayer.coffee']
-						dest: 'dist'
-						ext: '.js'
-					},
-					{
-						expand: true
-						cwd: 'src'
-						src: ['main.coffee']
+						src: ['*.coffee']
 						dest: 'demo'
 						ext: '.js'
 					}
@@ -35,14 +30,14 @@ module.exports = (grunt) =>
 				options:
 					keepalive: true
 					port: 9001
-					base: ''
+					base: 'demo'
 
 		exec:
 			server:
 				command: 'grunt connect &'
 
 			open:
-				command: 'open http://localhost:9001/demo'
+				command: 'open http://localhost:9001'
 
 		
 	grunt.loadNpmTasks 'grunt-contrib-coffee'
@@ -54,5 +49,9 @@ module.exports = (grunt) =>
 	grunt.registerTask 'default', ['bower' ,'compile']
 	grunt.registerTask 'server', ['exec:server', 'compile', 'exec:open', 'watch']
 	
-	grunt.registerTask 'travis', 'Travis build tasks', ['default']
+	grunt.registerTask 'heroku', 'Heroku build tasks', [ 'default' ]
+
+	grunt.registerTask 'travis', 'Travis tests', () ->
+		console.log 'No unit tests'
+
 	grunt.registerTask 'compile', 'Compile coffeescript', ['coffee']

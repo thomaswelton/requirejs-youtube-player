@@ -1,7 +1,7 @@
 {
     "name": "YouTubePlayer"
   , "version": "0.0.0"
-  , "main": "dist/YouTubePlayer.js"
+  , "main": "demo/YouTubePlayer.js"
   , "dependencies": {
       "requirejs": "0.4.*"
     , "requirejs-domready": "0.4.*"
