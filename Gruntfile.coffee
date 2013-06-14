@@ -39,6 +39,10 @@ module.exports = (grunt) =>
 					port: 9001
 					base: 'demo'
 
+		nodeunit:
+			all: ['test/all.js']
+
+
 		exec:
 			server:
 				command: 'grunt connect &'
@@ -52,13 +56,13 @@ module.exports = (grunt) =>
 	grunt.loadNpmTasks 'grunt-contrib-connect'
 	grunt.loadNpmTasks 'grunt-exec'
 	grunt.loadNpmTasks 'grunt-bower-task'
+	grunt.loadNpmTasks 'grunt-contrib-nodeunit'
 	
 	grunt.registerTask 'default', ['bower' ,'compile']
 	grunt.registerTask 'server', ['exec:server', 'compile', 'exec:open', 'watch']
 	
 	grunt.registerTask 'heroku', 'Heroku build tasks', [ 'default' ]
 
-	grunt.registerTask 'travis', 'Travis tests', () ->
-		console.log 'No unit tests'
-
+	grunt.registerTask 'tests', 'Travis tests', ['nodeunit']
+	
 	grunt.registerTask 'compile', 'Compile coffeescript', ['coffee']
