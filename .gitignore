@@ -2,3 +2,4 @@
 /node_modules/
 /components/
 /demo/components/
+/demo/*.js

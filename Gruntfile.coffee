@@ -17,6 +17,13 @@ module.exports = (grunt) =>
 						src: ['*.coffee']
 						dest: 'demo'
 						ext: '.js'
+					},
+					{
+						expand: true
+						cwd: 'src'
+						src: ['YouTubePlayer.coffee']
+						dest: 'dist'
+						ext: '.js'
 					}
 				]
 
