@@ -22,4 +22,7 @@
     , "grunt-bower-task": "git://github.com/thomaswelton/grunt-bower-task.git"
     , "grunt-contrib-nodeunit": "~0.2.0"
   }
+  , "devDependencies": {
+    "coffee-script": "*"
+  }
 }
