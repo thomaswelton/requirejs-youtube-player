@@ -1,7 +1,7 @@
-bower-youtube-player
-====================
-[![Build Status](https://travis-ci.org/thomaswelton/bower-youtube-player.png)](https://travis-ci.org/thomaswelton/bower-youtube-player)
-[![Dependency Status](https://david-dm.org/thomaswelton/bower-youtube-player.png)](https://david-dm.org/thomaswelton/bower-youtube-player)
+requirejs-youtube-player
+========================
+[![Build Status](https://travis-ci.org/thomaswelton/requirejs-youtube-player.png)](https://travis-ci.org/thomaswelton/requirejs-youtube-player)
+[![Dependency Status](https://david-dm.org/thomaswelton/requirejs-youtube-player.png)](https://david-dm.org/thomaswelton/requirejs-youtube-player)
 
 AMD compatible helper for loading the Youtube API and injecting videos
 
@@ -29,4 +29,3 @@ Supported events
 - onPause
 - onBuffer
 - onCued
-

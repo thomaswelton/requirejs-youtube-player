@@ -1,5 +1,5 @@
 {
-   "name": "bower-youtube-player"
+   "name": "requirejs-youtube-player"
   , "description": "AMD compatible helper for loading the Youtube API and injecting videos"
   , "version": "0.0.0"
   , "scripts": {
@@ -10,7 +10,7 @@
   }
   , "repository": {
       "type": "git",
-      "url": "https://github.com/thomaswelton/bower-youtube-player.git"
+      "url": "https://github.com/thomaswelton/requirejs-youtube-player.git"
   }
   , "dependencies": {
       "bower": ">= 0.9.x"
