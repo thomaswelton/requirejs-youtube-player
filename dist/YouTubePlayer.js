@@ -8,7 +8,7 @@
     return YouTube = (function(_super) {
       __extends(YouTube, _super);
 
-      function YouTube(el, ytID, dimensions) {
+      function YouTube(el, ytID, options) {
         var _ref,
           _this = this;
         this.el = el;
@@ -18,26 +18,27 @@
         this.injectVideo = __bind(this.injectVideo, this);
         YouTube.__super__.constructor.call(this);
         if ((typeof YT !== "undefined" && YT !== null) && (YT.Player != null)) {
-          this.injectVideo(this.el, this.ytID, dimensions);
+          this.injectVideo(this.el, this.ytID, options);
         } else {
           window.youtubeIframeApiLoader = (_ref = window.youtubeIframeApiLoader) != null ? _ref : new EventEmitter();
           window.onYouTubeIframeAPIReady = function() {
             return youtubeIframeApiLoader.fireEvent('apiReady');
           };
           youtubeIframeApiLoader.addEvent('apiReady', function() {
-            return _this.injectVideo(_this.el, _this.ytID, dimensions);
+            return _this.injectVideo(_this.el, _this.ytID, options);
           });
           requirejs(['https://youtube.com/iframe_api']);
         }
       }
 
-      YouTube.prototype.injectVideo = function(el, id, dimensions) {
-        if (dimensions == null) {
-          dimensions = false;
+      YouTube.prototype.injectVideo = function(el, id, options) {
+        if (options == null) {
+          options = false;
         }
         return this.player = new YT.Player(el, {
-          height: dimensions.height,
-          width: dimensions.width,
+          height: options.height,
+          width: options.width,
+          playerVars: options,
           videoId: id,
           events: {
             'onReady': this.onPlayerReady
