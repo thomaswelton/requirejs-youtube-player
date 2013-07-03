@@ -7,11 +7,11 @@
 
 define ['EventEmitter'], (EventEmitter) ->
 	class YouTube extends EventEmitter
-		constructor: (@el, @ytID, dimensions) ->
+		constructor: (@el, @ytID, options) ->
 			super()
 
 			if YT? and YT.Player?
-				@injectVideo @el, @ytID, dimensions
+				@injectVideo @el, @ytID, options
 			else
 				## Create a global variable to act as an event emitter for all YouTube instances
 				window.youtubeIframeApiLoader = window.youtubeIframeApiLoader ? new EventEmitter()
@@ -23,15 +23,16 @@ define ['EventEmitter'], (EventEmitter) ->
 				
 				## When the api is ready inject the video
 				youtubeIframeApiLoader.addEvent 'apiReady', () =>
-					@injectVideo @el, @ytID, dimensions
+					@injectVideo @el, @ytID, options
 
 				## Load the API
 				requirejs ['https://youtube.com/iframe_api']
 
-		injectVideo: (el, id, dimensions = false) =>
+		injectVideo: (el, id, options = false) =>
 			@player = new YT.Player el,
-				height: dimensions.height,
-				width: dimensions.width,
+				height: options.height,
+				width: options.width,
+				playerVars: options,
 				videoId: id,
 				events:
 					'onReady': @onPlayerReady
