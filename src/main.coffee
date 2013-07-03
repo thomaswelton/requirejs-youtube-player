@@ -24,8 +24,10 @@ require ['YouTubePlayer', 'domReady!'], (YouTubePlayer) ->
 		testEvents video3, 'Video 3'
 	, 2000
 
+
 	player4 = $('player4')
 
 	player4.addEventListener 'click', () ->
-		new YouTubePlayer event.target, 'FzRH3iTQPrk', { width: 50, autoplay: 1 }
+		video4 = new YouTubePlayer event.target, 'FzRH3iTQPrk', { autoplay: 1 }
+		testEvents video4, 'Video 4'
 
