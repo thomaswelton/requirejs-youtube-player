@@ -6,7 +6,7 @@
       "requirejs": "2.1.*"
     , "requirejs-domready": "2.0.*"
     , "requirejs-plugins": "1.0.*"
-    , "EventEmitter" : "git://github.com/thomaswelton/bower-event-emitter.git"
+    , "EventEmitter" : "git://github.com/thomaswelton/bower-event-emitter.git#0.0.1"
   }
   , "ignore": [
       "**/.*"
