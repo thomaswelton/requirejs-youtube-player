@@ -4,7 +4,7 @@
   , "main": "dist/YouTubePlayer.js"
   , "dependencies": {
       "requirejs": "0.4.*"
-    , "requirejs-domready": "0.4.*"
+    , "requirejs-domready": "2.0.*"
     , "requirejs-plugins": "1.0.*"
     , "EventEmitter" : "git://github.com/thomaswelton/bower-event-emitter.git"
   }
