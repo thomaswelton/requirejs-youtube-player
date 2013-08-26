@@ -2,6 +2,7 @@ requirejs-youtube-player
 ========================
 [![Build Status](https://travis-ci.org/thomaswelton/requirejs-youtube-player.png)](https://travis-ci.org/thomaswelton/requirejs-youtube-player)
 [![Dependency Status](https://david-dm.org/thomaswelton/requirejs-youtube-player.png)](https://david-dm.org/thomaswelton/requirejs-youtube-player)
+[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/thomaswelton/requirejs-youtube-player/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
 
 AMD compatible helper for loading the Youtube API and injecting videos
 
