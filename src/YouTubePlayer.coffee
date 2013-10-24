@@ -2,7 +2,7 @@
 #
 #	Class: YouTubePlayer
 #	https://developers.google.com/youtube/iframe_api_reference
-#	
+
 ##############################################################
 
 define ['EventEmitter'], (EventEmitter) ->
@@ -20,7 +20,7 @@ define ['EventEmitter'], (EventEmitter) ->
 				window.onYouTubeIframeAPIReady = () ->
 					## Fire the apiReady event for all 
 					youtubeIframeApiLoader.fireEvent 'apiReady'
-				
+
 				## When the api is ready inject the video
 				youtubeIframeApiLoader.addEvent 'apiReady', () =>
 					@injectVideo @el, @ytID, options
