@@ -31,3 +31,27 @@ require ['YouTubePlayer', 'domReady!'], (YouTubePlayer) ->
 		video4 = new YouTubePlayer event.target, 'FzRH3iTQPrk', { autoplay: 1 }
 		testEvents video4, 'Video 4'
 
+
+	# Playlist
+	playlistPlayer = null
+	playlistVideo = document.getElementById 'playlist-video'
+
+	onThumbClick = (event) ->
+		ytID = event.target.getAttribute('data-yt-id')
+
+		if playlistPlayer?
+			playlistPlayer.loadVideoById ytID
+		else
+			playlistPlayer = new YouTubePlayer playlistVideo, ytID, { autoplay: 1 }
+
+		nextItem = event.target.nextElementSibling
+
+		if nextItem
+			playlistPlayer.once 'onEnd', () ->
+				ytID = nextItem.getAttribute('data-yt-id')
+				playlistPlayer.loadVideoById ytID
+
+
+	playlistThumbs = document.getElementById('playlist-videos').getElementsByTagName('img')
+	thumb.addEventListener 'click', onThumbClick for thumb in playlistThumbs
+		

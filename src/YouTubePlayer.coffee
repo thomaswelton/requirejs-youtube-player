@@ -53,4 +53,7 @@ define ['EventEmitter'], (EventEmitter) ->
 				when YT.PlayerState.BUFFERING then @fireEvent 'onBuffer'
 				when YT.PlayerState.CUED then @fireEvent 'onCued'
 
+		loadVideoById: (args...) =>
+			@player.loadVideoById.apply @player, args
+
 ###

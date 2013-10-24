@@ -1,7 +1,8 @@
 (function() {
   var __bind = function(fn, me){ return function(){ return fn.apply(me, arguments); }; },
     __hasProp = {}.hasOwnProperty,
-    __extends = function(child, parent) { for (var key in parent) { if (__hasProp.call(parent, key)) child[key] = parent[key]; } function ctor() { this.constructor = child; } ctor.prototype = parent.prototype; child.prototype = new ctor(); child.__super__ = parent.prototype; return child; };
+    __extends = function(child, parent) { for (var key in parent) { if (__hasProp.call(parent, key)) child[key] = parent[key]; } function ctor() { this.constructor = child; } ctor.prototype = parent.prototype; child.prototype = new ctor(); child.__super__ = parent.prototype; return child; },
+    __slice = [].slice;
 
   define(['EventEmitter'], function(EventEmitter) {
     var YouTube;
@@ -13,6 +14,7 @@
           _this = this;
         this.el = el;
         this.ytID = ytID;
+        this.loadVideoById = __bind(this.loadVideoById, this);
         this.onPlayerStateChange = __bind(this.onPlayerStateChange, this);
         this.onPlayerReady = __bind(this.onPlayerReady, this);
         this.injectVideo = __bind(this.injectVideo, this);
@@ -64,6 +66,12 @@
           case YT.PlayerState.CUED:
             return this.fireEvent('onCued');
         }
+      };
+
+      YouTube.prototype.loadVideoById = function() {
+        var args;
+        args = 1 <= arguments.length ? __slice.call(arguments, 0) : [];
+        return this.player.loadVideoById.apply(this.player, args);
       };
 
       return YouTube;

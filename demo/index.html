@@ -16,10 +16,50 @@
 			}
 		});
 	</script>
+
+	<style type="text/css">
+		#playlist-container{
+			overflow: hidden;
+		}
+		
+		#playlist-video{
+			width:420px;
+			height:315px;
+			background:green;
+			float:left;
+		}
+		
+		#playlist-video, #playlist-videos{
+			float:left;
+			height:315px; 
+			overflow: auto;
+		}
+
+		#playlist-videos img{
+			display:block;
+		}
+
+
+	</style>
 </head>
 <body>
 	<h1>Youtube</h1>
 
+
+	<h3>Playlist</h3>
+	<div id="playlist-container">
+		<div id="playlist-video">
+			<img src="http://placehold.it/420x315&amp;text=Choose%20a%20video" width=420 height315>
+		</div>
+		<div id="playlist-videos">
+			<img src="http://img.youtube.com/vi/bpOSxM0rNPM/0.jpg" alt="" width="200" data-yt-id="bpOSxM0rNPM">
+			<img src="http://img.youtube.com/vi/oABEGc8Dus0/0.jpg" alt="" width="200" data-yt-id="oABEGc8Dus0">
+			<img src="http://img.youtube.com/vi/5TUIciKQzxI/0.jpg" alt="" width="200" data-yt-id="5TUIciKQzxI">
+			<img src="http://img.youtube.com/vi/xCiQXsvPr1M/0.jpg" alt="" width="200" data-yt-id="xCiQXsvPr1M">
+			<img src="http://img.youtube.com/vi/xCiQXsvPr1M/0.jpg" alt="" width="200" data-yt-id="xCiQXsvPr1M">
+		</div>
+	</div>
+	
 	<div>
 		<p>Width defined in JS height auto calculated for aspect ratio</p>
 		<div id="player1"></div>
