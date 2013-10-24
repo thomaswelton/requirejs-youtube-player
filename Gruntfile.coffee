@@ -3,9 +3,11 @@ module.exports = (grunt) =>
 		pkg: grunt.file.readJSON 'package.json'
 
 		bower:
-			install:
-				options:
-					targetDir: 'demo/components'
+            install:
+                options:
+                    targetDir: 'demo/bower_components'
+                    cleanTargetDir: true
+                    layout: "byComponent"
 
 		## Compile coffeescript
 		coffee:

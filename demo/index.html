@@ -4,14 +4,14 @@
 	<meta charset="UTF-8">
 	<title>Bower Youtube Player Demo</title>
 	
-	<script data-main="main" src="components/requirejs/require.js"></script>
+	<script data-main="main" src="bower_components/requirejs/require.js"></script>
 	<script>
 		requirejs.config({
 			baseUrl: "",
 			paths:{
-				'domReady' : 'components/requirejs-domready/domReady',
-				'async' : 'components/requirejs-plugins/src/async',
-				'EventEmitter': 'components/EventEmitter/dist/EventEmitter',
+				'domReady' : 'bower_components/requirejs-domready/domReady',
+				'async' : 'bower_components/requirejs-plugins/src/async',
+				'EventEmitter': 'bower_components/EventEmitter/dist/EventEmitter',
 				'YouTubePlayer' : 'YouTubePlayer'
 			}
 		});

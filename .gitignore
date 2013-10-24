@@ -1,5 +1,5 @@
 .DS_Store
 /node_modules/
-/components/
-/demo/components/
+/bower_components/
+/demo/bower_components/
 /demo/*.js

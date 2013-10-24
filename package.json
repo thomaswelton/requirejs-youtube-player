@@ -13,13 +13,13 @@
       "url": "https://github.com/thomaswelton/requirejs-youtube-player.git"
   }
   , "dependencies": {
-      "bower": ">= 0.9.x"
+      "bower": "~1.2.7"
     , "grunt": ">= 0.4.1"
     , "grunt-contrib-coffee": ">= 0.6.6"
     , "grunt-contrib-watch": "~0.4.4"
     , "grunt-contrib-connect": "~0.3.0"
     , "grunt-exec": "~0.4.0"
-    , "grunt-bower-task": "git://github.com/thomaswelton/grunt-bower-task.git"
+    , "grunt-bower-task": "git://github.com/thomaswelton/grunt-bower-task.git#devel"
     , "grunt-contrib-nodeunit": "~0.2.0"
   }
   , "devDependencies": {
